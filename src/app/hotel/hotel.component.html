@@ -1,0 +1,118 @@
+<app-header></app-header>
+<!-- <section style="
+background-image: url('https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+">
+    <nav class="navbar">
+        <input class="form-control" type="text" name="city" [(ngModel)]="city" (ngModelChange)="search()"
+            placeholder="Enter City Name To Search">
+    </nav>
+    <div class="container">
+        <div class="text-center text-primary">
+            <h2 *ngIf="hotels.length!=0"><b><i>List Of Hotels Are </i></b> </h2>
+            <h2 *ngIf="hotels.length==0">Oops, Sorry! Hotels Not Found</h2>
+        </div>
+    </div>
+    <div class="container">
+        <form #hotelForm="ngForm">
+            <div class="row">
+                <div class="col-sm-3 mb-3" *ngFor="let hot of hotels"> 
+                    <div class="card">
+                        <div class="card-header">Hotel Id : {{hot.hotelId }}
+                        </div>
+                        <div class="card-body">Hotel Name : {{ hot.hotelName }} <br>
+                            Hotel City : {{ hot.hotelCity }} <br>
+                        </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary" (click)="checkPack(hot.hotelId)">Available
+                                Packages </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div> -->
+            <!-- <div *ngFor="let hot of hotels" class="mb-4">
+                <div class="card">
+                    <div class="card-header">Hotel Id : {{hot.hotelId }}
+                    </div>
+                    <div class="card-body">Hotel Name : {{ hot.hotelName }} <br>
+                        Hotel City : {{ hot.hotelCity }} <br>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary" (click)="checkPack(hot.hotelId)">Available
+                            Packages </button>
+                    </div>
+                </div>
+        </div> -->
+        <!-- </form>
+    </div>
+</section> -->
+<!-- <br> -->
+
+<!-- <div class="container">
+    <div class="content">
+        <div fxLayout="row wrap" fxLayoutGap="16px grid">
+            <div *ngFor="let hot of hotels" fxFlex="25%">
+                <mat-card class="pad">
+                    <mat-card-header>
+                        <mat-card-title>
+                            title {{hot.hotelId}}
+                        </mat-card-title>
+                    </mat-card-header>
+                    <img mat-card-image src="https://images.unsplash.com/photo-1615460549969-36fa19521a4f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fGhvdGVsfGVufDB8fDB8fA%3D%3D&w=1000&q=80">
+                    <mat-card-content>
+                        <p>akash Pramanick</p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-button>Like</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<section style="
+background-image: url('https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+">
+<div class="row" >
+    <div class="col-sm-3">
+        <nav class="navbar" >
+            <input class="form-control" type="text" name="city" [(ngModel)]="city" (ngModelChange)="search()"
+                placeholder="Enter City Name To Search">
+        </nav>
+    </div>
+</div>
+
+<div class="container">
+    <div class="text-center text-info" style="padding-top: 10px;">
+        <h2 *ngIf="hotels.length!=0"><b><i>List Of Hotels Are </i></b> </h2>
+        <h2 *ngIf="hotels.length==0">Oops, Sorry! Hotels Not Found</h2>
+    </div>
+</div>
+<div class="container">
+    <div class="content">
+        <div fxLayout="row wrap mb-4" fxLayoutGap="16px grid">
+            <div *ngFor="let hot of hotels" fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%">
+                <mat-card class="mat-elevation-z4">
+                    <mat-card-header>
+                        <mat-card-title>
+                            Hotel Id : <span class="text-primary"> {{hot.hotelId}} </span>
+                        </mat-card-title>
+                    </mat-card-header>
+                    <img mat-card-image src="https://images.unsplash.com/photo-1615460549969-36fa19521a4f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fGhvdGVsfGVufDB8fDB8fA%3D%3D&w=1000&q=80">
+                    <mat-card-content>
+                        <p>Hotel Name : <span class="text-primary">{{ hot.hotelName }}</span></p>
+                        <p>Hotel City : <span class="text-primary">{{ hot.hotelCity }}</span></p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button class="btn btn-primary btn-right" type="submit" mat-button (click)="checkPack(hot.hotelId)">Available Packages</button>
+                    </mat-card-actions>
+                    <mat-card-footer>
+                    </mat-card-footer>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<app-footer></app-footer>

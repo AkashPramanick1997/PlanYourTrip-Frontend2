@@ -1,0 +1,61 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-2">
+            <app-sidenav></app-sidenav>
+        </div>
+        <div class="col-lg-10">
+            <app-admin-header></app-admin-header>
+            <nav class="navbar navbar-light bg-light">
+                <div class="container-fluid">
+                  <span class="navbar-text">
+                   <h2 class="text-success">Details Of All Bookings</h2> 
+                  </span>
+                </div>
+              </nav>
+              <hr>
+            <table class="table table-success table-striped">
+                <thead>
+                    <tr>
+                        <th>Bookings Id</th>
+                        <th>User Id</th>
+                        <th>Hotel Id</th>
+                        <th>Package Id</th>
+                        <th>Total Ammount</th>
+                        <th colspan="2"><b>Action</b></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let up of userPack">
+                        <td>{{up.userPackId}}</td>
+                        <td>{{up.user.userId}}</td>
+                        <td>{{up.pack.hotel.hotelId}}</td>
+                        <td> {{ up.pack.packId}}</td>
+                        <td>{{up.totalAmmount}}</td>
+                        <td><button class="btn btn-danger" (click)="deletePack(up.userPackId)">delete</button></td>
+                        <td><button class="btn btn-success" (click)="detailsPack(up.userPackId)">details</button></td>     
+                    </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+
+  <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabe" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Details Of Booking</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>User Name : <span>{{uPack.user.userName}}</span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"(click)="closeModal()">Got It</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+</div>
+  

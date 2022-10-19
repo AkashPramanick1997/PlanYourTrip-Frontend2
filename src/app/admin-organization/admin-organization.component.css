@@ -1,0 +1,9 @@
+.padd{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: oblique;
+    text-align: center;
+    padding-top: 15px;
+}
+table {
+    width: 100%;
+  }

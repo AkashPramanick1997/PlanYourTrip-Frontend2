@@ -1,0 +1,8 @@
+.imgcss{
+    color: chocolate;
+    background-color: yellowgreen;
+}
+.modal-body{
+    max-width: 800px;
+    max-height: 800px;
+}

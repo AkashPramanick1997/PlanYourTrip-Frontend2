@@ -1,0 +1,23 @@
+<h2 mat-dialog-content style="text-align:center;" class="text-success">Details Of Booking</h2>
+<mat-dialog-content>
+    <mat-card>
+        <hr>
+    <mat-card-content>
+    <p >User Name : <span class="text-primary">{{_testService.myData.user.userName}}</span></p>
+    <p >User Email : <span class="text-primary">{{_testService.myData.user.emailId}}</span></p>
+    <p >Hotel Name : <span class="text-primary">{{_testService.myData.pack.hotel.hotelName}}</span></p>
+    <p >Package Name : <span class="text-primary">{{_testService.myData.pack.packName }}</span></p>
+    <p >Package City: <span class="text-primary">{{_testService.myData.pack.packCity }}</span></p>
+    <p >Package Price: <span class="text-primary">{{_testService.myData.pack.packPrice }}</span></p>
+    <p >Check In : <span class="text-primary">{{_testService.myData.checkIn | date: "dd/MM/YYYY" }}</span></p>
+    <p >Check Out : <span class="text-primary">{{_testService.myData.checkOut | date: "dd/MM/YYYY"}}</span></p>
+    <p >Number Of People : <span class="text-primary">{{_testService.myData.numberOfPeople }}</span></p>
+    <p >Number Of Rooms : <span class="text-primary">{{_testService.myData.numberOfRooms }}</span></p>
+    <p >Total Ammount : <span class="text-primary">{{_testService.myData.totalAmmount }}</span></p>
+    <hr>
+</mat-card-content>
+  </mat-card>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button mat-dialog-close class="btn btn-dark">ok</button>
+</mat-dialog-actions>

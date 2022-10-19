@@ -1,0 +1,39 @@
+<!-- <mat-nav-list class="hole">
+    <div class="logo py-4">
+      <h3 class="text-danger">PlanYourTrip </h3>
+    </div>
+    <mat-divider></mat-divider>
+    <h2 matSubheader class="mt-2">APPLICATIONS</h2>
+  
+    <a class="box" mat-list-item routerLinkActive="list-item-active" routerLink="/home"><mat-icon>home</mat-icon> Home</a>
+    <a mat-list-item routerLink="/adminuser" class="box"> <mat-icon>edit</mat-icon> User Panel </a>
+    <a mat-list-item routerLink="/adminorg" class="box"> <mat-icon>edit</mat-icon> Organization Panel </a>
+    <a mat-list-item class="box"> <mat-icon>edit</mat-icon> Hotel Panel </a>
+    <a mat-list-item class="box"> <mat-icon>edit</mat-icon> Packages Panel </a>
+    <br><br>
+  </mat-nav-list> -->
+
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button mat-icon-button>
+            <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+        </button>
+        <h1>PlanYourTrip</h1>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav opened="true">
+        <mat-nav-list>
+            <a mat-list-item routerLink="/admin" routerLinkActive="active">Home</a>
+            <a mat-list-item routerLink="/adminuser">User Module</a>
+            <a mat-list-item routerLink="/adminorg">Organization Module</a>
+            <a mat-list-item routerLink="/adminhotel">Hotel Module</a>
+            <a mat-list-item routerLink="/adminpack">Package Module</a> 
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="height: 88vh;">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,54 @@
+<app-header> </app-header>
+<section>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:rgb(0,172,245) ;">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <div class="navbar-brand"><b><i>List Of Bookings</i></b></div>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        </ul>
+        <div class="d-flex">
+          <h3 cl>Welcome User, <span style="color:rgb(97,54,164) ;">{{session.userName}}</span>  </h3>
+        </div>
+      </div>
+    </div>
+  </nav><hr>
+  <div class="container-fluid">
+    <div>
+      <div>
+        <table class="table table-border table-striped">
+          <thead>
+            <th>Booking Id</th>
+            <th>Package Name</th>
+            <th>Package City</th>
+            <th>Package Price</th>
+            <th>Check In</th>
+            <th>Check Out</th>
+            <th>Number Of People</th>
+            <th>Number Of Rooms</th>
+            <th>Total Ammount</th>
+            <th colspan="2"> Actions </th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let book of _userPacks">
+              <td>{{ book.userPackId }}</td>
+              <td>{{ book.pack.packName }}</td>
+              <td>{{ book.pack.packCity }}</td>
+              <td>{{ book.pack.packPrice }}</td>
+              <td>{{ book.checkIn | date: "dd/MM/YYYY" }}</td>
+              <td>{{ book.checkOut | date: "dd/MM/YYYY" }}</td>
+              <td>{{ book.numberOfPeople }}</td>
+              <td>{{ book.numberOfRooms}}</td>
+              <td> {{ book.totalAmmount}}</td>
+              <td><button class="btn btn-danger" (click)="deleteBooking(book.userPackId)">delete</button></td>
+              <td><button class="btn btn-success" (click)="detailsBooking(book.userPackId)">details</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>

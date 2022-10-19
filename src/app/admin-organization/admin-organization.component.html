@@ -1,0 +1,88 @@
+<div class="row">
+    <div class="col-lg-2">
+        <app-sidenav></app-sidenav>
+    </div>
+    <div class="col-lg-10">
+        <app-admin-header></app-admin-header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+          <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+              <div class="navbar-brand"><b><i>List Of Organizations</i></b></div>
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              </ul>
+              <div class="d-flex">
+
+                <button class="btn btn-success" (click)="onClick()">Add Organization </button>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <hr>
+        <div class="container">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                <!--- Note that these columns can be defined in any order.
+                      The actual rendered columns are set as a property on the row definition" -->
+              
+                <!-- Position Column -->
+                <ng-container matColumnDef="organizationId">
+                  <th mat-header-cell *matHeaderCellDef> No. </th>
+                  <td mat-cell *matCellDef="let element"> {{element.organizationId}} </td>
+                </ng-container>
+              
+                <!-- Name Column -->
+                <ng-container matColumnDef="organizationName">
+                  <th mat-header-cell *matHeaderCellDef> Name </th>
+                  <td mat-cell *matCellDef="let element"> {{element.organizationName}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="action">
+                  <th mat-header-cell *matHeaderCellDef> Action </th>
+                  <td mat-cell *matCellDef="let element"> <button class="btn btn-danger" (click)="deleteOrganization(element.organizationId)">delete</button> </td>
+                </ng-container>
+                <ng-container matColumnDef="action1">
+                  <th mat-header-cell *matHeaderCellDef> Action </th>
+                  <td mat-cell *matCellDef="let element"> <button class="btn btn-success" (click)="detailsOrg(element.organizationId)">details</button> </td>
+                </ng-container>
+              
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>        
+        </div>
+    </div>
+</div>
+  
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add A Organization</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form (ngSubmit)="addOrganization()">
+            <div class="form-group">
+              <label for="orgId">Organization Id</label>
+              <input type="number" class="form-control" id="orgId" aria-describedby="emailHelp" placeholder="Enter Organization Id" name="orgId" [(ngModel)]="organizationId">
+            </div>
+            <div class="form-group">
+              <label for="orgName">Organization Name</label>
+              <input type="text" class="form-control" id="orgName" placeholder="Organization Name" name="orgName" [(ngModel)]="organizationName">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeModal()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,82 @@
+
+<!-- <nav class="navbar navbar-inverse navbar-dark bg-dark">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" [routerLink]="['/home']" >PlanYourTrip</a><br>
+        <div class="navbar-brand" *ngIf="_registrationService.loggedIn()" >Welcome, {{session.userName}}</div>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a class="navbar-brand"[routerLink]="['/home']">Home</a></li>
+        <li><a class="navbar-brand" [routerLink]="['/aboutus']">About Us</a></li>
+        <li><a class="navbar-brand" [routerLink]="['/contactus']">Contact Us</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a class="navbar-brand" [routerLink]="['/registration']" *ngIf="!_registrationService.loggedIn()"
+            ><span class="glyphicon glyphicon-user"></span> Sign Up</a
+          >
+        </li>
+        <li>
+          <a class="navbar-brand" [routerLink]="['/login']" *ngIf="!_registrationService.loggedIn()"
+            ><span class="glyphicon glyphicon-log-in"></span> Login</a
+          >
+        </li>
+        <li>
+          <a class="navbar-brand" [routerLink]="['/login']" *ngIf="_registrationService.loggedIn()" (click)="_registrationService.logout()"
+            ><span class="glyphicon glyphicon-log-in"></span> LogOut</a
+          >
+        </li>
+        <li>
+          <a class="navbar-brand" [routerLink]="['/bookings']" *ngIf="_registrationService.loggedIn()"
+            ><span class="glyphicon glyphicon-shopping-cart"></span> Bookings, Cart</a
+          >
+        </li>
+      </ul>
+    </div>
+  </nav> -->
+
+  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar w/ text</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          Navbar text with an inline element
+        </span>
+      </div>
+    </div>
+  </nav> -->
+
+  <mat-toolbar class="navbar navbar-dark" color="primary">
+    <mat-toolbar-row fxLayoutAlign="space-between center">
+      <div>
+        <button mat-button [routerLink]="['/home']">
+          <mat-icon>home</mat-icon>
+          <span class="logo" > PlanYourTrip</span>
+        </button>
+        <button mat-button [routerLink]="['/home']"><mat-icon>Home</mat-icon> Home</button>
+        <button mat-button [routerLink]="['/aboutus']"><mat-icon>Aboutus</mat-icon> About Us</button>
+        <button mat-button [routerLink]="['/contactus']"><mat-icon>ContactUs</mat-icon> Contact Us</button>
+      </div>
+      <div>
+        <button mat-button [routerLink]="['/registration']" *ngIf="!_registrationService.loggedIn()"> <mat-icon>add_box</mat-icon> SignUp</button>
+        <button mat-button [routerLink]="['/login']" *ngIf="!_registrationService.loggedIn()"><mat-icon>login</mat-icon>User? Login</button>
+        <button mat-button [routerLink]="['/adminlogin']" *ngIf="!_registrationService.loggedIn()"><mat-icon>login</mat-icon> Admin? Login</button>
+        <button mat-button *ngIf="_registrationService.loggedIn()" (click)="_registrationService.logout()"><mat-icon>logout</mat-icon> LogOut</button>
+        <button mat-button *ngIf="_registrationService.loggedIn()" [routerLink]="['/bookings']"><i class="material-icons">shopping_cart</i> Cart,Bookings</button>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>

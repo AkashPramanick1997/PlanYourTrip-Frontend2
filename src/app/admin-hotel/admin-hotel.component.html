@@ -1,0 +1,60 @@
+<!-- <mat-drawer-container>
+      <app-sidenav></app-sidenav>
+    <mat-drawer-content>
+        <app-admin-header></app-admin-header>
+      <h2>Welcome</h2>
+    </mat-drawer-content>
+  </mat-drawer-container> -->
+  <!-- <mat-drawer-container class="example-container">
+    <mat-drawer style="height: 100% ;" opened>
+        <app-sidenav></app-sidenav>
+    </mat-drawer>
+    <mat-drawer-content>Main content</mat-drawer-content>
+  </mat-drawer-container> -->
+  
+<div>
+    <div class="row">
+        <div class="col-lg-2">
+            <app-sidenav></app-sidenav>
+        </div>
+        <div class="col-lg-10">
+            <app-admin-header></app-admin-header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                  <div class="navbar-brand"><b><i>List Of Hotels</i></b></div>
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  </ul>
+                  <div class="d-flex">
+  
+                    <button class="btn btn-outline-success">Add Hotel</button>
+                  </div>
+                </div>
+              </div>
+            </nav>
+            <hr>
+            <table class="table table-dark table-striped">
+              <thead>
+                  <tr>
+                      <th>Hotel Id</th>
+                      <th>Hotel Name</th>
+                      <th>Hotel City</th>
+                      <th colspan="2"><b>Action</b></th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let ht of hotels">
+                      <td>{{ht.hotelId}}</td>
+                      <td>{{ht.hotelName}}</td>
+                      <td>{{ht.hotelCity}}</td>
+                      <td><button class="btn btn-danger" (click)="deletePack(ht.userPackId)">delete</button></td>
+                      <td><button class="btn btn-success" (click)="detailsPack(ht.userPackId)">details</button></td>     
+                  </tr>
+              </tbody>
+            </table>
+        </div>
+    </div>
+</div>

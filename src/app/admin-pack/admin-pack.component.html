@@ -1,0 +1,49 @@
+<div>
+    <div class="row">
+        <div class="col-lg-2">
+            <app-sidenav></app-sidenav>
+        </div>
+        <div class="col-lg-10">
+            <app-admin-header></app-admin-header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light bg-primary">
+                <div class="container-fluid">
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <div class="navbar-brand"><b><i>List Of Packages</i></b></div>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    </ul>
+                    <div class="d-flex">
+    
+                      <button class="btn btn-outline-success">Add Package</button>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+              <hr>
+
+              <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Package Id</th>
+                        <th>Package Name</th>
+                        <th>Package City</th>
+                        <th>Package Price</th>
+                        <th colspan="2"><b>Action</b></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let pa of packs">
+                        <td>{{pa.packId}}</td>
+                        <td>{{pa.packName}}</td>
+                        <td>{{pa.packCity}}</td>
+                        <td>{{pa.packPrice}}</td>
+                        <td><button class="btn btn-danger" (click)="deletePack(pa.userPackId)">delete</button></td>
+                        <td><button class="btn btn-success" (click)="detailsPack(pa.userPackId)">details</button></td>     
+                    </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
