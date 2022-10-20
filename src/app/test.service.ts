@@ -10,4 +10,10 @@ export class TestService {
   public myData : any ;
 
   public orgData : any;
+
+  public packData : any;
+
+  public bookingId : any;
+
+  public packPrice : any;
 }

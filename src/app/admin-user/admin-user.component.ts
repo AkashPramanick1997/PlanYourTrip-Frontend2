@@ -39,7 +39,8 @@ export class AdminUserComponent implements OnInit {
           console.log("Success");
         }
       )
-      this.router.navigate(['/adminuser'])
+      this.router.navigate(['/adminuser']);
+      window.location.reload();
     },
     () => {
 

@@ -26,4 +26,8 @@ export class AdminHotelComponent implements OnInit {
   detailsPack(id : number){
     
   }
+
+  updatePack(id : any){
+    
+  }
 }

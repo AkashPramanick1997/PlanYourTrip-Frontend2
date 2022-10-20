@@ -42,7 +42,7 @@
                       <th>Hotel Id</th>
                       <th>Hotel Name</th>
                       <th>Hotel City</th>
-                      <th colspan="2"><b>Action</b></th>
+                      <th colspan="3"><b>Action</b></th>
                   </tr>
               </thead>
               <tbody>
@@ -51,7 +51,9 @@
                       <td>{{ht.hotelName}}</td>
                       <td>{{ht.hotelCity}}</td>
                       <td><button class="btn btn-danger" (click)="deletePack(ht.userPackId)">delete</button></td>
-                      <td><button class="btn btn-success" (click)="detailsPack(ht.userPackId)">details</button></td>     
+                      <td><button class="btn btn-success" (click)="detailsPack(ht.userPackId)">details</button></td>  
+                      <td><button class="btn btn-warning" (click)="updatePack(ht.userPackId)">update</button></td>
+   
                   </tr>
               </tbody>
             </table>

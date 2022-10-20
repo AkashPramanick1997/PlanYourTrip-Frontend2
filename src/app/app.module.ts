@@ -48,6 +48,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { DialogAdminUserComponent } from './dialog-admin-user/dialog-admin-user.component';
 import { DialogAdminOrganizationComponent } from './dialog-admin-organization/dialog-admin-organization.component';
 import { NgConfirmModule } from 'ng-confirm-box';
+import { DialogAdminPackComponent } from './dialog-admin-pack/dialog-admin-pack.component';
+import { DialogBookingUpdateComponent } from './dialog-booking-update/dialog-booking-update.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,7 +75,9 @@ import { NgConfirmModule } from 'ng-confirm-box';
     AdminHotelComponent,
     AdminPackComponent,
     DialogAdminUserComponent,
-    DialogAdminOrganizationComponent
+    DialogAdminOrganizationComponent,
+    DialogAdminPackComponent,
+    DialogBookingUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -109,6 +113,8 @@ import { NgConfirmModule } from 'ng-confirm-box';
   entryComponents : [
     DialogAdminUserComponent,
     DialogAdminOrganizationComponent,
+    DialogAdminPackComponent,
+    DialogBookingUpdateComponent,
   ]
 })
 export class AppModule { }

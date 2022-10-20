@@ -16,7 +16,7 @@
                     </ul>
                     <div class="d-flex">
     
-                      <button class="btn btn-outline-success">Add Package</button>
+                      <button class="btn btn-outline-success" (click)="onClick()">Add Package</button>
                     </div>
                   </div>
                 </div>
@@ -30,7 +30,7 @@
                         <th>Package Name</th>
                         <th>Package City</th>
                         <th>Package Price</th>
-                        <th colspan="2"><b>Action</b></th>
+                        <th colspan="3"><b>Action</b></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -39,11 +39,50 @@
                         <td>{{pa.packName}}</td>
                         <td>{{pa.packCity}}</td>
                         <td>{{pa.packPrice}}</td>
-                        <td><button class="btn btn-danger" (click)="deletePack(pa.userPackId)">delete</button></td>
-                        <td><button class="btn btn-success" (click)="detailsPack(pa.userPackId)">details</button></td>     
+                        <td><button class="btn btn-danger" (click)="deletePack(pa.packId)">delete</button></td>
+                        <td><button class="btn btn-warning" (click)="updatePack(pa.packId)">update</button></td>  
+                         <td><button class="btn btn-success" (click)="detailsPack(pa.packId)">details</button></td>     
+   
                     </tr>
                 </tbody>
               </table>
         </div>
     </div>
 </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add A Organization</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form (ngSubmit)="addPackage()">
+            <div class="form-group">
+              <input type="text" class="form-control" id="packName" aria-describedby="emailHelp" placeholder="Enter Package Name " name="packName" [(ngModel)]="packName">
+            </div><br>
+            <div class="form-group">
+              <input type="text" class="form-control" id="packCity" placeholder="Enter Package City" name="packCity" [(ngModel)]="packCity">
+            </div>
+            <br>
+            <div class="form-group">
+              <input type="number" class="form-control" id="packPrice" placeholder="Enter Package Price" name="packPrice" [(ngModel)]="packPrice">
+            </div>
+            <br>
+            <div class="form-group">
+              <input type="number" class="form-control" id="packRating" placeholder="Enter Package Rating" name="packRating" [(ngModel)]="packRating">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary"><i>Add Package</i></button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeModal()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

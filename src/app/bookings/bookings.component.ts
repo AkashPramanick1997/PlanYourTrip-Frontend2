@@ -1,3 +1,4 @@
+import { DialogBookingUpdateComponent } from './../dialog-booking-update/dialog-booking-update.component';
 import { Router } from '@angular/router';
 import { NgConfirmService } from 'ng-confirm-box';
 import { TestService } from './../test.service';
@@ -17,6 +18,8 @@ export class BookingsComponent implements OnInit {
 
   _userPacks : any;
   session : any;
+
+  pricePack : any;
   
 
   constructor( private _bboking_service : BookingsService , 
@@ -24,7 +27,7 @@ export class BookingsComponent implements OnInit {
                 private userPackService : UserPackService , 
                 private testService : TestService , 
                 private confirmService : NgConfirmService,
-                private router : Router
+                private router : Router ,
                 ) { }
 
 
@@ -61,5 +64,11 @@ export class BookingsComponent implements OnInit {
         }
       )
       this.dialog.open(DialogAdminUserComponent);
+    }
+
+    updateBooking( id : any){
+      this.testService.bookingId = id ;
+      this.dialog.open(DialogBookingUpdateComponent);
+      
     }
 }

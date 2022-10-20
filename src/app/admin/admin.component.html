@@ -1,12 +1,29 @@
-<mat-drawer-container>
+<style>
+  .bg
+  {
+    background-image: url(assets/images/pic.jpg); 
+    background-attachment: fixed;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .c1{
+    font-size: 32px;
+    text-shadow: 1px 1px 3px;
+    font-style: italic;
+  }
+</style>
+<mat-drawer-container class="img js-fullheight bg">
     <mat-drawer mode="side" [opened]="sideBarOpen">
       <app-sidenav></app-sidenav>
     </mat-drawer>
     <mat-drawer-content>
         <app-admin-header></app-admin-header>
         <br>
-        <br>
-      <h2 class="text-success" style="text-align:center;font-weight:bolder">Welcome To Admin Dashboard </h2>
-      <br><hr>
+        <br><br><br><br><br><br><br><br><br><br><br>
+      <h1 class="text-dark c1" style="text-align:center;font-weight:bolder">Welcome To Admin Dashboard </h1>
+      <br>
+
     </mat-drawer-content>
   </mat-drawer-container>

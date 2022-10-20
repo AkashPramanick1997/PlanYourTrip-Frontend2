@@ -44,6 +44,8 @@
               <td> {{ book.totalAmmount}}</td>
               <td><button class="btn btn-danger" (click)="deleteBooking(book.userPackId)">delete</button></td>
               <td><button class="btn btn-success" (click)="detailsBooking(book.userPackId)">details</button></td>
+              <td><button class="btn btn-warning" (click)="updateBooking(book.userPackId)">update</button></td>
+
             </tr>
           </tbody>
         </table>

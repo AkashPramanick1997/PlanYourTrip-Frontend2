@@ -20,4 +20,12 @@ export class PackService {
   public getAllPack():Observable<any>{
     return this._http.get<any>("http://localhost:8080/packs");
   }
+
+  public addNewPack(pack : any): Observable<any>{
+    return this._http.post<any>("http://localhost:8080/addPack",pack);
+  }
+
+  public deletePackById(id : any) : Observable<any>{
+    return this._http.delete<any>("http://localhost:8080/deletePack?id="+id);
+  }
 }

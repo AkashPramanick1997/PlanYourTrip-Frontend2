@@ -64,6 +64,7 @@ export class AdminOrganizationComponent implements OnInit {
       console.log("success");
       this.formModal.hide();
       this.router.navigate(['/adminorg']);
+      window.location.reload();
       
     }
   )
@@ -74,7 +75,8 @@ export class AdminOrganizationComponent implements OnInit {
     () =>{
       this.admonOrgService.deleteOrganization(id).subscribe(
         data => {
-          this.router.navigate(['/admin']);
+          this.router.navigate(['/adminorg']);
+          window.location.reload();
         });
     },
     () =>{ }
@@ -87,5 +89,9 @@ export class AdminOrganizationComponent implements OnInit {
         this.dialog.open(DialogAdminOrganizationComponent);
       }
     )
+  }
+
+  updateOrg(id : any){
+
   }
 }
