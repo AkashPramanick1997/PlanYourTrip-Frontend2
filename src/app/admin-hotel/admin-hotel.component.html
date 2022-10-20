@@ -30,7 +30,7 @@
                   </ul>
                   <div class="d-flex">
   
-                    <button class="btn btn-outline-success">Add Hotel</button>
+                    <button type="button" class="btn btn-outline-success" (click)="onClick()">Add Hotel</button>
                   </div>
                 </div>
               </div>
@@ -52,7 +52,7 @@
                       <td>{{ht.hotelCity}}</td>
                       <td><button class="btn btn-danger" (click)="deletePack(ht.userPackId)">delete</button></td>
                       <td><button class="btn btn-success" (click)="detailsPack(ht.userPackId)">details</button></td>  
-                      <td><button class="btn btn-warning" (click)="updatePack(ht.userPackId)">update</button></td>
+                      <!-- <td><button class="btn btn-warning" (click)="updatePack(ht.userPackId)">update</button></td> -->
    
                   </tr>
               </tbody>
@@ -60,3 +60,48 @@
         </div>
     </div>
 </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title text-success" style="text-align:center ;" id="exampleModalLabel">Add A Hotel</h2>
+        </div>
+        <div class="modal-body">
+                    <form #loginForm = "ngForm" class="signin-form" (ngSubmit)="onSubmit()">
+                      <h4 style="font-family: cursive;"> <b><i>Select Organization</i></b> </h4>
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-sm-8 offet-sm-3">
+                            <div class="form-group selectForm">
+                              <select name="doctor" id="doctor" class="btn btn-secondary custome-select selectForm" [(ngModel)]="organizationId">
+                                <option value="" selected>Select</option>
+                                <option *ngFor=" let org of organizations" value="{{org.organizationId}}" class="selectItem">{{org.organizationId}}.&nbsp;{{ org.organizationName}}
+                                </option>
+                              </select>
+                            </div><br>
+                          </div>
+                        </div>
+                      </div><br>
+                      <div class="row">
+                        <div>
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Enter Hotel Name" required name="HotelName" [(ngModel)]="HotelName">
+                        </div>
+                      </div>
+                    </div><br>
+                      <div class="row">
+                          <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Enter Hotel City" required name="HotelCity" [(ngModel)]="HotelCity">
+                          </div>
+                      </div><br>
+                      <div class="form-group">
+                        <button type="submit" class="form-control btn btn-primary submit px-3"><i>Add Hotel</i></button>
+                      </div>
+                    </form>
+                    </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeModal()">Close</button>
+        </div>

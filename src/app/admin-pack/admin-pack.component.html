@@ -40,7 +40,7 @@
                         <td>{{pa.packCity}}</td>
                         <td>{{pa.packPrice}}</td>
                         <td><button class="btn btn-danger" (click)="deletePack(pa.packId)">delete</button></td>
-                        <td><button class="btn btn-warning" (click)="updatePack(pa.packId)">update</button></td>  
+                        <!-- <td><button class="btn btn-warning" (click)="updatePack(pa.packId)">update</button></td>   -->
                          <td><button class="btn btn-success" (click)="detailsPack(pa.packId)">details</button></td>     
    
                     </tr>
@@ -62,6 +62,15 @@
         </div>
         <div class="modal-body">
           <form (ngSubmit)="addPackage()">
+            <label >Select Hotel Id</label>
+            <div class="form-group selectForm">
+              <select name="hotelId" id="hotelId" class="btn btn-secondary custome-select selectForm" [(ngModel)]="hotelId">
+                <option value="" selected>Select</option>
+                <option *ngFor=" let hot of hotels" value="{{hot.hotelId}}" class="selectItem">{{hot.hotelId}}.&nbsp;{{hot.hotelName}}
+                </option>
+              </select>
+            </div><br>
+
             <div class="form-group">
               <input type="text" class="form-control" id="packName" aria-describedby="emailHelp" placeholder="Enter Package Name " name="packName" [(ngModel)]="packName">
             </div><br>

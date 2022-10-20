@@ -17,4 +17,8 @@ export class HotelService {
     return this._http.get<any>("http://localhost:8080/hotels");
   }
 
+  public addHotelByOrganizationId(id : any , hot : any):Observable<any>{
+    return this._http.post<any>("http://localhost:8080/addhotel?id="+id , hot);
+  }
+
   }

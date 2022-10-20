@@ -1,3 +1,4 @@
+import { HotelService } from './../hotel.service';
 import { DialogAdminPackComponent } from './../dialog-admin-pack/dialog-admin-pack.component';
 import { TestService } from './../test.service';
 import { Router } from '@angular/router';
@@ -18,11 +19,15 @@ export class AdminPackComponent implements OnInit {
   packCity : any;
   packPrice : any;
   packRating : any;
+
+  hotelId : any;
+  hotels : any;
   
   constructor( private packService : PackService , private router : Router,
                 private testService : TestService ,
                 private dialog : MatDialog ,
-                private confirmService : NgConfirmService) { }
+                private confirmService : NgConfirmService ,
+                private hotelService : HotelService) { }
 
   ngOnInit(): void {
     this.packService.getAllPack().subscribe(
@@ -30,6 +35,11 @@ export class AdminPackComponent implements OnInit {
       {
         this.packs=data;
         console.log(data);
+      }
+    );
+    this.hotelService.getAllHotel().subscribe(
+      data => {
+        this.hotels = data;
       }
     )
   }
@@ -73,7 +83,7 @@ export class AdminPackComponent implements OnInit {
       "packPrice" : this.packPrice,
       "packRating" : this.packRating
     }
-    this.packService.addNewPack(org).subscribe(
+    this.packService.addNewPack(org , this.hotelId).subscribe(
       data => {
         this.formModal.hide();
         this.router.navigate(['/adminpack']);
